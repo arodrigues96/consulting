@@ -65,7 +65,7 @@ const translations = {
     
     // Footer
     'footer.continue': 'Continue explorando',
-    'footer.copyright': '© 2024 AWS Consulting. Todos os direitos reservados.',
+    'footer.copyright': '© 2026 AB Consulting. Todos os direitos reservados.',
   },
   en: {
     // Navigation
@@ -121,7 +121,7 @@ const translations = {
     
     // Footer
     'footer.continue': 'Keep exploring',
-    'footer.copyright': '© 2024 AWS Consulting. All rights reserved.',
+    'footer.copyright': '© 2026 AB Consulting. All rights reserved.',
   },
 }
 

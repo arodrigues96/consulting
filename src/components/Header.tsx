@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <nav className="flex items-center justify-between py-3 md:py-4">
           {/* Logo/Title */}
           <div className="flex items-center">
@@ -62,8 +62,33 @@ export default function Header() {
 
           {/* Language Selector & Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            {/* Language Selector */}
-            <div className="flex items-center gap-1.5 ml-auto">
+            {/* Language Selector - Desktop: absolute right, Mobile: normal */}
+            <div className="hidden md:flex items-center gap-1.5 absolute right-4 sm:right-6">
+              <button
+                onClick={() => setLanguage('pt')}
+                className={`p-1 rounded-lg transition-all ${
+                  language === 'pt'
+                    ? 'bg-aws-orange/20 ring-2 ring-aws-orange'
+                    : 'hover:bg-gray-100'
+                }`}
+                title="Português"
+              >
+                <BrazilFlag className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`p-1 rounded-lg transition-all ${
+                  language === 'en'
+                    ? 'bg-aws-orange/20 ring-2 ring-aws-orange'
+                    : 'hover:bg-gray-100'
+                }`}
+                title="English"
+              >
+                <USFlag className="w-4 h-4" />
+              </button>
+            </div>
+            {/* Language Selector - Mobile */}
+            <div className="flex md:hidden items-center gap-1.5">
               <button
                 onClick={() => setLanguage('pt')}
                 className={`p-1 rounded-lg transition-all ${
