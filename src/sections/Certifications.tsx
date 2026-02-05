@@ -2,14 +2,28 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
 import { useLanguage } from '../contexts/LanguageContext'
-import { Award } from 'lucide-react'
 
 const certifications = [
-  'AWS DevOps Engineer Professional',
-  'AWS Solutions Architect Professional',
-  'Terraform Associate',
-  'AI Practitioner (AWS)',
-  'SysOps Admin (AWS)',
+  {
+    name: 'AWS DevOps Engineer Professional',
+    image: `${import.meta.env.BASE_URL}certificates/devops-pro.png`,
+  },
+  {
+    name: 'AWS Solutions Architect Professional',
+    image: `${import.meta.env.BASE_URL}certificates/solutions-architect-pro.png`,
+  },
+  {
+    name: 'Terraform Associate',
+    image: `${import.meta.env.BASE_URL}certificates/terraform.png`,
+  },
+  {
+    name: 'AI Practitioner (AWS)',
+    image: `${import.meta.env.BASE_URL}certificates/aws-ai-early-adopter.png`,
+  },
+  {
+    name: 'SysOps Admin (AWS)',
+    image: `${import.meta.env.BASE_URL}certificates/sysops.png`,
+  },
 ]
 
 export default function Certifications() {
@@ -41,23 +55,23 @@ export default function Certifications() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
-              key={cert}
+              key={cert.name}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-aws-orange/10 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-aws-orange" />
-                  </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-4">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="w-full h-auto max-w-48 mx-auto object-contain"
+                  />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {cert}
-                  </h3>
-                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {cert.name}
+                </h3>
               </div>
             </motion.div>
           ))}
