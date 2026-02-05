@@ -48,8 +48,7 @@ export default function Projects() {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.5
       }
     }
   }
@@ -105,8 +104,8 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
