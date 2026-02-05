@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const projects = [
   'Implementação de CI/CD',
@@ -21,10 +22,12 @@ const projects = [
 export default function Projects() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useIntersectionObserver(ref, { threshold: 0.1 })
+  const { t } = useLanguage()
 
   return (
     <section
       ref={ref}
+      id="projects"
       className="section-padding bg-gray-50"
     >
       <div className="container-max">
@@ -35,10 +38,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            Projetos Realizados
+            {t('projects.title')}
           </h2>
           <p className="text-xl text-gray-600">
-            Soluções implementadas com sucesso
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 

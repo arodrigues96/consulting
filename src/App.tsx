@@ -1,3 +1,6 @@
+import { LanguageProvider } from './contexts/LanguageContext'
+import Header from './components/Header'
+import ScrollIndicator from './components/ScrollIndicator'
 import Hero from './sections/Hero'
 import Consultants from './sections/Consultants'
 import Certifications from './sections/Certifications'
@@ -8,15 +11,19 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <Consultants />
-      <Certifications />
-      <Skills />
-      <Projects />
-      <Clients />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <ScrollIndicator />
+        <Consultants />
+        <Certifications />
+        <Skills />
+        <Projects />
+        <Clients />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 
