@@ -2,17 +2,17 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
 import { useLanguage } from '../contexts/LanguageContext'
-import { Cloud, Settings, TrendingUp, Server, GitBranch, Monitor, Zap, ArrowRightLeft } from 'lucide-react'
+import { Cloud, Code, BarChart3, Database, GitBranch, Activity, Cpu, RefreshCw } from 'lucide-react'
 
 const skillsKeys = [
-  { key: 'admin', icon: Server },
-  { key: 'planning', icon: Settings },
+  { key: 'admin', icon: Database },
+  { key: 'planning', icon: Code },
   { key: 'migration', icon: Cloud },
-  { key: 'optimization', icon: TrendingUp },
+  { key: 'optimization', icon: BarChart3 },
   { key: 'cicd', icon: GitBranch },
-  { key: 'monitoring', icon: Monitor },
-  { key: 'automation', icon: Zap },
-  { key: 'migrations', icon: ArrowRightLeft },
+  { key: 'monitoring', icon: Activity },
+  { key: 'automation', icon: Cpu },
+  { key: 'migrations', icon: RefreshCw },
 ]
 
 export default function Skills() {

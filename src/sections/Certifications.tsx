@@ -83,7 +83,7 @@ export default function Certifications() {
           </div>
 
           {/* Bottom row: 2 certifications centered */}
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-12 md:gap-16">
             {bottomCertifications.map((cert, index) => (
               <motion.div
                 key={cert.name}
