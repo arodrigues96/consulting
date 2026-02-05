@@ -49,6 +49,29 @@ npm run build
 npm run preview
 ```
 
+## Deploy no GitHub Pages
+
+O projeto está configurado para deploy automático no GitHub Pages através de GitHub Actions.
+
+### Como habilitar:
+
+1. Vá para **Settings** do repositório no GitHub
+2. Clique em **Pages** no menu lateral
+3. Em **Source**, selecione **GitHub Actions**
+4. Faça um push para a branch `main` - o deploy será automático
+
+O site estará disponível em: `https://arodrigues96.github.io/consulting/`
+
+### Deploy Manual (alternativa):
+
+Se preferir fazer deploy manual:
+
+```bash
+npm run build
+```
+
+Depois, vá em **Settings > Pages** e selecione a pasta `dist` como source.
+
 ## Estrutura do Projeto
 
 ```

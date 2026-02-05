@@ -40,7 +40,7 @@ export default function Consultants() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto mb-16">
           {consultants.map((consultant, index) => (
             <motion.div
               key={consultant.name}
@@ -64,6 +64,23 @@ export default function Consultants() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="max-w-4xl mx-auto text-center space-y-6"
+        >
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            {t('consultants.description')}
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            {t('consultants.expertise')}
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            {t('consultants.market')}
+          </p>
+        </motion.div>
       </div>
     </section>
   )

@@ -27,6 +27,9 @@ const translations = {
     // Consultants
     'consultants.title': 'Nossos Consultores',
     'consultants.subtitle': 'Especialistas certificados com experiência internacional',
+    'consultants.description': 'Juntos, somam mais de 15 anos de experiência em computação e computação em nuvem, atuando em projetos de alta complexidade e impacto. Possuem certificações reconhecidas internacionalmente, como AWS DevOps Engineer Professional, AWS Solutions Architect Professional, Terraform Associate, AWS SysOps Administrator, AI Practitioner, entre outras.',
+    'consultants.expertise': 'Especialistas em administração, planejamento, migração e otimização de ambientes on-premise e em nuvem, ajudam empresas a alcançarem maior eficiência, segurança e escalabilidade.',
+    'consultants.market': 'Com forte atuação no mercado internacional, trabalham com as tecnologias mais atuais e melhores práticas do setor.',
     
     // Certifications
     'certifications.title': 'Certificações',
@@ -80,6 +83,9 @@ const translations = {
     // Consultants
     'consultants.title': 'Our Consultants',
     'consultants.subtitle': 'Certified specialists with international experience',
+    'consultants.description': 'Together, they have over 15 years of experience in computing and cloud computing, working on high-complexity and high-impact projects. They hold internationally recognized certifications, such as AWS DevOps Engineer Professional, AWS Solutions Architect Professional, Terraform Associate, AWS SysOps Administrator, AI Practitioner, among others.',
+    'consultants.expertise': 'Specialists in administration, planning, migration and optimization of on-premise and cloud environments, helping companies achieve greater efficiency, security and scalability.',
+    'consultants.market': 'With strong presence in the international market, they work with the most current technologies and best practices in the industry.',
     
     // Certifications
     'certifications.title': 'Certifications',
