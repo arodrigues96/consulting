@@ -59,20 +59,18 @@ export default function Certifications() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+              className="flex flex-col items-center text-center"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4">
-                  <img
-                    src={cert.image}
-                    alt={cert.name}
-                    className="w-full h-auto max-w-48 mx-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {cert.name}
-                </h3>
+              <div className="mb-4">
+                <img
+                  src={cert.image}
+                  alt={cert.name}
+                  className="w-full h-auto max-w-48 mx-auto object-contain"
+                />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                {cert.name}
+              </h3>
             </motion.div>
           ))}
         </div>
