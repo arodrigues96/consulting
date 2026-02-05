@@ -29,10 +29,10 @@ export default function Clients() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
             {t('clients.title')}
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg sm:text-xl text-gray-600">
             {t('clients.subtitle')}
           </p>
         </motion.div>
@@ -47,7 +47,7 @@ export default function Clients() {
               className="text-center"
             >
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:border-aws-lightBlue hover:shadow-lg transition-all">
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">
                   {client}
                 </h3>
               </div>

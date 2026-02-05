@@ -40,8 +40,7 @@ export default function ScrollIndicator() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-40 pointer-events-none"
-          style={{ left: '50%' }}
+          className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-40 pointer-events-none flex justify-center items-center"
         >
           <motion.button
             onClick={scrollDown}
@@ -51,10 +50,10 @@ export default function ScrollIndicator() {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="flex flex-col items-center gap-2 bg-transparent pointer-events-auto cursor-pointer"
+            className="flex flex-col items-center gap-1.5 sm:gap-2 bg-transparent pointer-events-auto cursor-pointer"
           >
-            <p className="text-sm md:text-base text-gray-600 font-medium whitespace-nowrap">{t('footer.continue')}</p>
-            <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-aws-orange" />
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium whitespace-nowrap">{t('footer.continue')}</p>
+            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-aws-orange" />
           </motion.button>
         </motion.div>
       )}

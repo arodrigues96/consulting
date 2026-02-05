@@ -32,10 +32,10 @@ export default function Consultants() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
             {t('consultants.title')}
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg sm:text-xl text-gray-600">
             {t('consultants.subtitle')}
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function Consultants() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
                 {consultant.name}
               </h3>
             </motion.div>
@@ -69,15 +69,15 @@ export default function Consultants() {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-4xl mx-auto text-center space-y-6"
+          className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 px-4"
         >
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
             {t('consultants.description')}
           </p>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
             {t('consultants.expertise')}
           </p>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
             {t('consultants.market')}
           </p>
         </motion.div>
