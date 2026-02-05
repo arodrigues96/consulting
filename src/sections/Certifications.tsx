@@ -5,23 +5,23 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 const certifications = [
   {
-    name: 'AWS DevOps Engineer Professional',
+    name: 'AWS - DevOps Engineer Professional',
     image: `${import.meta.env.BASE_URL}certificates/devops-pro.png`,
   },
   {
-    name: 'AWS Solutions Architect Professional',
+    name: 'AWS - Solutions Architect Professional',
     image: `${import.meta.env.BASE_URL}certificates/solutions-architect-pro.png`,
   },
   {
-    name: 'Terraform Associate',
+    name: 'Hashicorp - Terraform Associate',
     image: `${import.meta.env.BASE_URL}certificates/terraform.png`,
   },
   {
-    name: 'AI Practitioner (AWS)',
+    name: 'AWS - AI Early Adopter',
     image: `${import.meta.env.BASE_URL}certificates/aws-ai-early-adopter.png`,
   },
   {
-    name: 'SysOps Admin (AWS)',
+    name: 'AWS - SysOps Admin',
     image: `${import.meta.env.BASE_URL}certificates/sysops.png`,
   },
 ]
@@ -61,11 +61,11 @@ export default function Certifications() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="mb-4">
+              <div className="mb-4 w-48 h-48 flex items-center justify-center">
                 <img
                   src={cert.image}
                   alt={cert.name}
-                  className="w-full h-auto max-w-48 mx-auto object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">
