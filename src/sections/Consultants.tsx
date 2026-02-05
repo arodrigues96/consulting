@@ -6,11 +6,11 @@ import { useLanguage } from '../contexts/LanguageContext'
 const consultants = [
   {
     name: 'André Rodrigues',
-    photo: '/andre.jpg',
+    photo: `${import.meta.env.BASE_URL}andre.jpg`,
   },
   {
     name: 'Bolívar Dutra',
-    photo: '/boli.png',
+    photo: `${import.meta.env.BASE_URL}boli.png`,
   },
 ]
 
