@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -22,37 +22,80 @@ const projects = [
 export default function Projects() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useIntersectionObserver(ref, { threshold: 0.1 })
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+  
+  const y = useTransform(scrollYProgress, [0, 1], [40, -40])
   const { t } = useLanguage()
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  }
 
   return (
     <section
       ref={ref}
       id="projects"
-      className="section-padding bg-gray-50"
+      className="section-padding bg-gray-50 relative overflow-hidden"
     >
-      <div className="container-max">
+      <motion.div
+        style={{ y }}
+        className="container-max"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <motion.h2
+            variants={itemVariants}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4"
+          >
             {t('projects.title')}
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600">
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg sm:text-xl text-gray-600"
+          >
             {t('projects.subtitle')}
-          </p>
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+        >
+          {projects.map((project) => (
             <motion.div
               key={project}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-gray-100 hover:border-aws-orange/30"
+              variants={itemVariants}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-aws-orange/30 cursor-pointer"
             >
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-aws-orange"></div>
