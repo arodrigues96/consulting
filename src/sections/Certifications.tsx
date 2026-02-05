@@ -84,29 +84,26 @@ export default function Certifications() {
 
           {/* Bottom row: 2 certifications centered */}
           <div className="flex justify-center gap-6">
-            {bottomCertifications.map((cert, index) => {
-              const isAI = cert.name.includes('AI Early Adopter')
-              return (
-                <motion.div
-                  key={cert.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div className={`mb-4 flex items-center justify-center ${isAI ? 'w-64 h-64' : 'w-48 h-48'}`}>
-                    <img
-                      src={cert.image}
-                      alt={cert.name}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {cert.name}
-                  </h3>
-                </motion.div>
-              )
-            })}
+            {bottomCertifications.map((cert, index) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="mb-4 w-48 h-48 flex items-center justify-center">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {cert.name}
+                </h3>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
