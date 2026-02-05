@@ -3,7 +3,8 @@ import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
 import { useLanguage } from '../contexts/LanguageContext'
 
-const certifications = [
+// Top row: 3 certifications
+const topCertifications = [
   {
     name: 'AWS - DevOps Engineer Professional',
     image: `${import.meta.env.BASE_URL}certificates/devops-pro.png`,
@@ -13,16 +14,20 @@ const certifications = [
     image: `${import.meta.env.BASE_URL}certificates/solutions-architect-pro.png`,
   },
   {
-    name: 'Hashicorp - Terraform Associate',
-    image: `${import.meta.env.BASE_URL}certificates/terraform.png`,
+    name: 'AWS - SysOps Admin',
+    image: `${import.meta.env.BASE_URL}certificates/sysops.png`,
   },
+]
+
+// Bottom row: 2 certifications (centered)
+const bottomCertifications = [
   {
     name: 'AWS - AI Early Adopter',
     image: `${import.meta.env.BASE_URL}certificates/aws-ai-early-adopter.png`,
   },
   {
-    name: 'AWS - SysOps Admin',
-    image: `${import.meta.env.BASE_URL}certificates/sysops.png`,
+    name: 'Hashicorp - Terraform Associate',
+    image: `${import.meta.env.BASE_URL}certificates/terraform.png`,
   },
 ]
 
@@ -52,27 +57,54 @@ export default function Certifications() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center text-center"
-            >
-              <div className="mb-4 w-48 h-48 flex items-center justify-center">
-                <img
-                  src={cert.image}
-                  alt={cert.name}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {cert.name}
-              </h3>
-            </motion.div>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          {/* Top row: 3 certifications */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+            {topCertifications.map((cert, index) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="mb-4 w-48 h-48 flex items-center justify-center">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {cert.name}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom row: 2 certifications centered */}
+          <div className="flex justify-center gap-6">
+            {bottomCertifications.map((cert, index) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="mb-4 w-48 h-48 flex items-center justify-center">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {cert.name}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
