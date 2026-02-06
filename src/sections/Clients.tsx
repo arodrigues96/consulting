@@ -38,8 +38,8 @@ const clientCases: Record<string, ClientCase> = {
       'Processamento de 50M+ eventos de analytics por jogo'
     ]
   },
-  'Moderna Pharmaceutics': {
-    client: 'Moderna Pharmaceutics',
+  'Moderna, Inc.': {
+    client: 'Moderna, Inc.',
     title: 'Plataforma de Pesquisa e Desenvolvimento Farmacêutico',
     description: 'Infraestrutura AWS para suportar pesquisas genômicas, análise de dados clínicos e colaboração global de equipes de pesquisa.',
     challenges: [
@@ -143,7 +143,7 @@ const clientCases: Record<string, ClientCase> = {
 
 const clients = [
   'Boston Celtics',
-  'Moderna Pharmaceutics',
+  'Moderna, Inc.',
   'DreamWorks',
   'Playbill',
   'Asics',
