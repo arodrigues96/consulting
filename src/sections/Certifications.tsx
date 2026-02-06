@@ -129,7 +129,7 @@ export default function Certifications() {
             variants={containerVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
-            className="flex justify-center gap-12 md:gap-16"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 md:gap-16 max-w-2xl mx-auto"
           >
             {bottomCertifications.map((cert) => (
               <motion.div
@@ -138,7 +138,7 @@ export default function Certifications() {
                 whileHover={{ scale: 1.05, y: -8 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="mb-4 w-48 h-48 flex items-center justify-center">
+                <div className="mb-4 w-48 h-48 flex items-center justify-center flex-shrink-0">
                   <img
                     src={cert.image}
                     alt={cert.name}
