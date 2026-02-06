@@ -62,6 +62,16 @@ const translations = {
     // Clients
     'clients.title': 'Nossos Clientes',
     'clients.subtitle': 'Empresas líderes que confiam em nossa expertise',
+    'clients.description': 'Nossa equipe ajudou a entregar soluções AWS escaláveis para organizações que suportam:',
+    'clients.bullet1': 'Plataformas de mídia e entretenimento de alto tráfego',
+    'clients.bullet2': 'Sistemas críticos de saúde e ciências da vida',
+    'clients.bullet3': 'Marcas globais de varejo e consumo',
+    'clients.bullet4': 'Organizações de esportes profissionais',
+    'clients.including': 'Incluindo trabalhos relacionados a:',
+    'clients.clickToLearn': 'Clique e saiba mais',
+    'clients.modal.challenges': 'Desafios',
+    'clients.modal.solution': 'Solução AWS',
+    'clients.modal.results': 'Resultados',
     
     // Footer
     'footer.continue': 'Continue explorando',
@@ -118,6 +128,16 @@ const translations = {
     // Clients
     'clients.title': 'Our Clients',
     'clients.subtitle': 'Leading companies that trust our expertise',
+    'clients.description': 'Our team has helped deliver scalable AWS solutions for organizations supporting:',
+    'clients.bullet1': 'High-traffic media and entertainment platforms',
+    'clients.bullet2': 'Mission-critical healthcare and life sciences systems',
+    'clients.bullet3': 'Global retail and consumer brands',
+    'clients.bullet4': 'Professional sports organizations',
+    'clients.including': 'Including work connected to:',
+    'clients.clickToLearn': 'Click to learn more',
+    'clients.modal.challenges': 'Challenges',
+    'clients.modal.solution': 'AWS Solution',
+    'clients.modal.results': 'Results',
     
     // Footer
     'footer.continue': 'Keep exploring',
