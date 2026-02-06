@@ -3,20 +3,20 @@ import { useRef } from 'react'
 import { useIntersectionObserver } from '../hooks/useScroll'
 import { useLanguage } from '../contexts/LanguageContext'
 
-const projects = [
-  'Implementação de CI/CD',
-  'Monitoramento e Observabilidade',
-  'Automação de processos',
-  'Migrações on-premise → nuvem',
-  'Migrações nuvem-nuvem',
-  'AWS Org Management',
-  'Implementação de VPN',
-  'Análise de FinOps para redução de custos',
-  'Rightsizing de infraestrutura',
-  'SSO',
-  'Sys Admin',
-  'Documentação e Padronização de processos',
-  'Treinamentos',
+const projectKeys = [
+  'cicd',
+  'monitoring',
+  'automation',
+  'migration',
+  'cloudToCloud',
+  'orgManagement',
+  'vpn',
+  'finops',
+  'rightsizing',
+  'sso',
+  'sysadmin',
+  'documentation',
+  'training',
 ]
 
 export default function Projects() {
@@ -89,9 +89,9 @@ export default function Projects() {
           animate={isVisible ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
         >
-          {projects.map((project) => (
+          {projectKeys.map((projectKey) => (
             <motion.div
-              key={project}
+              key={projectKey}
               variants={itemVariants}
               whileHover={{ y: -4, scale: 1.02 }}
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-aws-orange/30 cursor-pointer"
@@ -99,7 +99,7 @@ export default function Projects() {
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-aws-orange"></div>
                 <h3 className="text-lg font-medium text-gray-900">
-                  {project}
+                  {t(`projects.${projectKey}`)}
                 </h3>
               </div>
             </motion.div>

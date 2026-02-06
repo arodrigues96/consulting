@@ -58,6 +58,19 @@ const translations = {
     // Projects
     'projects.title': 'Projetos Realizados',
     'projects.subtitle': 'Soluções implementadas com sucesso',
+    'projects.cicd': 'Implementação de CI/CD',
+    'projects.monitoring': 'Monitoramento e Observabilidade',
+    'projects.automation': 'Automação de processos',
+    'projects.migration': 'Migrações on-premise → nuvem',
+    'projects.cloudToCloud': 'Migrações nuvem-nuvem',
+    'projects.orgManagement': 'AWS Org Management',
+    'projects.vpn': 'Implementação de VPN',
+    'projects.finops': 'Análise de FinOps para redução de custos',
+    'projects.rightsizing': 'Rightsizing de infraestrutura',
+    'projects.sso': 'SSO',
+    'projects.sysadmin': 'Sys Admin',
+    'projects.documentation': 'Documentação e Padronização de processos',
+    'projects.training': 'Treinamentos',
     
     // Clients
     'clients.title': 'Nossos Clientes',
@@ -124,6 +137,19 @@ const translations = {
     // Projects
     'projects.title': 'Completed Projects',
     'projects.subtitle': 'Successfully implemented solutions',
+    'projects.cicd': 'CI/CD Implementation',
+    'projects.monitoring': 'Monitoring and Observability',
+    'projects.automation': 'Process Automation',
+    'projects.migration': 'On-premise → Cloud Migrations',
+    'projects.cloudToCloud': 'Cloud-to-Cloud Migrations',
+    'projects.orgManagement': 'AWS Org Management',
+    'projects.vpn': 'VPN Implementation',
+    'projects.finops': 'FinOps Analysis for Cost Reduction',
+    'projects.rightsizing': 'Infrastructure Rightsizing',
+    'projects.sso': 'SSO',
+    'projects.sysadmin': 'Sys Admin',
+    'projects.documentation': 'Documentation and Process Standardization',
+    'projects.training': 'Training',
     
     // Clients
     'clients.title': 'Our Clients',
