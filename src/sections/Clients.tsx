@@ -302,71 +302,75 @@ export default function Clients() {
               className="fixed inset-2 sm:inset-4 md:inset-8 lg:inset-16 xl:inset-32 z-50 bg-white rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[96vh] sm:max-h-[90vh]"
             >
               <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 lg:p-12">
-                <div className="flex justify-between items-start mb-4 sm:mb-6 gap-4">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 flex-1 pr-2">
-                    {clientCases[selectedClient]?.client}
-                  </h2>
-                  <button
-                    onClick={() => setSelectedClient(null)}
-                    className="p-2 hover:bg-gray-100 active:bg-gray-200 rounded-full transition-colors flex-shrink-0 touch-manipulation"
-                    aria-label="Close modal"
-                  >
-                    <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
-                  </button>
-                </div>
+                {clientCases[selectedClient] && (
+                  <>
+                    <div className="flex justify-between items-start mb-4 sm:mb-6 gap-4">
+                      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 flex-1 pr-2">
+                        {clientCases[selectedClient].client}
+                      </h2>
+                      <button
+                        onClick={() => setSelectedClient(null)}
+                        className="p-2 hover:bg-gray-100 active:bg-gray-200 rounded-full transition-colors flex-shrink-0 touch-manipulation"
+                        aria-label="Close modal"
+                      >
+                        <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
+                      </button>
+                    </div>
 
-                <div className="space-y-4 sm:space-y-6">
-                  <div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                      {clientCases[selectedClient]?.title}
-                    </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                      {clientCases[selectedClient]?.description}
-                    </p>
-                  </div>
+                    <div className="space-y-4 sm:space-y-6">
+                      <div>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                          {clientCases[selectedClient].title}
+                        </h3>
+                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+                          {clientCases[selectedClient].description}
+                        </p>
+                      </div>
 
-                  <div>
-                    <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                      {t('clients.modal.challenges')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {clientCases[selectedClient]?.challenges.map((challenge, index) => (
-                        <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
-                          <span className="text-aws-orange mt-1 flex-shrink-0">•</span>
-                          <span>{challenge}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <div>
+                        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                          {t('clients.modal.challenges')}
+                        </h4>
+                        <ul className="space-y-2">
+                          {clientCases[selectedClient].challenges.map((challenge, index) => (
+                            <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
+                              <span className="text-aws-orange mt-1 flex-shrink-0">•</span>
+                              <span>{challenge}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                  <div>
-                    <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                      {t('clients.modal.solution')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {clientCases[selectedClient]?.solution.map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
-                          <span className="text-aws-lightBlue mt-1 flex-shrink-0">✓</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <div>
+                        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                          {t('clients.modal.solution')}
+                        </h4>
+                        <ul className="space-y-2">
+                          {clientCases[selectedClient].solution.map((item, index) => (
+                            <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
+                              <span className="text-aws-lightBlue mt-1 flex-shrink-0">✓</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                  <div>
-                    <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                      {t('clients.modal.results')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {clientCases[selectedClient]?.results.map((result, index) => (
-                        <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
-                          <span className="text-green-600 mt-1 flex-shrink-0">→</span>
-                          <span>{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                      <div>
+                        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                          {t('clients.modal.results')}
+                        </h4>
+                        <ul className="space-y-2">
+                          {clientCases[selectedClient].results.map((result, index) => (
+                            <li key={index} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
+                              <span className="text-green-600 mt-1 flex-shrink-0">→</span>
+                              <span>{result}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           </>
